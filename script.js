@@ -16,9 +16,6 @@
     }
     await fetchData();
     const productsArray = fetchedData.products; // accessing products array inside the json file
-    // console.log(fetchedData);
-    // console.log(productsArray);
-    // console.log(productsArray[0].name);
 
     // fetching json using .then() chain
     // fetch('products.json')
@@ -133,7 +130,6 @@
             const productObj = productsArray.find(product => product.name === productName);
             bestSellersProducts.push(productObj);
         }
-        // console.log(bestSellersProducts);
 
         populateProducts(bestSellersProducts, bestSellersContainer);
     }
@@ -149,7 +145,7 @@
         populateProducts(productsArray, productsPgContainer);
     }
 
-    // ui
+    // ui js
     const openMenuBtn = document.getElementById('mobile-nav__open');
     const closeMenuBtn = document.getElementById('mobile-nav__close');
     const navModal = document.getElementById('mobile-nav');
@@ -170,13 +166,15 @@
 
     // form validation
     if (window.location.pathname === '/pages/contact.html') {
-        const contactForm = document.getElementById('contact-us__form');
+        const contactForm = document.getElementById('form-container');
         const fnameInput = document.getElementById('fname');
         const lnameInput = document.getElementById('lname');
         const emailInput = document.getElementById('email');
         const phoneNumInput = document.getElementById('phone-number');
         const messageInput = document.getElementById('message');
         const messageSubmitInput = document.getElementById('contact-form__submit');
+        const messageSent = document.getElementById('message-sent');
+        const messageSentReturnBtn = document.getElementById('message-return__button')
         const invalidFnameMsg = document.getElementById('invalid-fname__msg');
         const invalidLnameMsg = document.getElementById('invalid-lname__msg');
         const invalidEmailMsg = document.getElementById('invalid-email__msg');
@@ -186,13 +184,15 @@
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const phoneNumRegex = /^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
 
-        contactForm.addEventListener('submit', (event) => {
+        contactForm.addEventListener('submit', function (event) {
             event.preventDefault();
 
+            let isValid = true;
             if (fnameInput.value === '') {
                 invalidFnameMsg.style.display = 'block';
                 invalidFnameMsg.textContent = "First name is empty. Please enter a valid value."
                 fnameInput.classList.add('invalid-input');
+                isValid = false;
             } else {
                 invalidFnameMsg.style.display = 'none';
                 fnameInput.classList.remove('invalid-input');
@@ -202,6 +202,7 @@
                 invalidLnameMsg.style.display = 'block';
                 invalidLnameMsg.textContent = "Last name is empty. Please enter a valid value."
                 lnameInput.classList.add('invalid-input');
+                isValid = false;
             } else {
                 invalidLnameMsg.style.display = 'none';
                 lnameInput.classList.remove('invalid-input');
@@ -211,10 +212,12 @@
                 invalidEmailMsg.style.display = 'block';
                 invalidEmailMsg.textContent = "Email address is empty. Please enter a valid value."
                 emailInput.classList.add('invalid-input');
+                isValid = false;
             } else if (!emailRegex.test(emailInput.value)) {
                 invalidEmailMsg.style.display = 'block';
                 invalidEmailMsg.textContent = "Email address is in an incorrect format. Please enter a valid value."
                 emailInput.classList.add('invalid-input');
+                isValid = false;
             } else {
                 invalidEmailMsg.style.display = 'none';
                 emailInput.classList.remove('invalid-input');
@@ -224,10 +227,12 @@
                 invalidPhoneMsg.style.display = 'block';
                 invalidPhoneMsg.textContent = "Phone number is empty. Please enter a valid value."
                 phoneNumInput.classList.add('invalid-input');
+                isValid = false;
             } else if (!phoneNumRegex.test(phoneNumInput.value)) {
                 invalidPhoneMsg.style.display = 'block';
                 invalidPhoneMsg.textContent = "Phone number is in an incorrect format. Please enter a valid value."
                 phoneNumInput.classList.add('invalid-input');
+                isValid = false;
             } else {
                 invalidPhoneMsg.style.display = 'none';
                 phoneNumInput.classList.remove('invalid-input');
@@ -237,10 +242,22 @@
                 invalidMessageMsg.style.display = 'block';
                 invalidMessageMsg.textContent = "Phone number is empty. Please enter a valid value."
                 messageInput.classList.add('invalid-input');
+                isValid = false;
             } else {
                 invalidMessageMsg.style.display = 'none';
                 messageInput.classList.remove('invalid-input');
             }
+
+            if (isValid) {
+                messageSent.style.display = 'flex';
+                contactForm.style.display = 'none';
+                event.target.reset();
+            }
+        })
+
+        messageSentReturnBtn.addEventListener('click', () => {
+            messageSent.style.display = 'none';
+            contactForm.style.display = 'flex';
         })
 
         fnameInput.addEventListener('change', () => {
