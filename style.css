@@ -262,6 +262,10 @@ nav {
     left: 1.5rem;
 }
 
+#mobile-nav__close {
+    display: none;
+}
+
 .slide-left,
 .slide-right {
     position: absolute;
@@ -315,9 +319,6 @@ nav {
 
 #hero-img__container aside button {
     display: none;
-}
-
-#hero-img__container aside button a {
     color: #fff;
 }
 
