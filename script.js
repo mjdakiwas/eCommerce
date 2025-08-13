@@ -2,7 +2,7 @@
     let fetchedData;
 
     // fetching json using asyn/await
-    const fetchData = async (url) => {
+    const fetchData = async () => {
         try {
             const response = await fetch('/data/products.json');
             if (!response.ok) {
@@ -16,9 +16,9 @@
     }
     await fetchData();
     const productsArray = fetchedData.products; // accessing products array inside the json file
-    console.log(fetchedData);
-    console.log(productsArray);
-    console.log(productsArray[0].name);
+    // console.log(fetchedData);
+    // console.log(productsArray);
+    // console.log(productsArray[0].name);
 
     // fetching json using .then() chain
     // fetch('products.json')

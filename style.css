@@ -155,11 +155,11 @@ footer .logo {
     font-size: .75rem;
 }
 
-section {
-    /* default section style */
+/* section {
+    default section style 
     width: fit-content;
     height: fit-content;
-}
+} */
 
 h1,
 h2,
@@ -176,6 +176,11 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
+}
+
+p {
+    /* default paragraph style */
+    font-family: "Inter", sans-serif;
 }
 
 button {
@@ -227,6 +232,10 @@ img {
 
 nav {
     position: relative;
+}
+
+#widescreen-nav {
+    display: none;
 }
 
 #mobile-nav {
@@ -288,15 +297,15 @@ nav {
     position: relative;
 }
 
+#hero-img1366__featured {
+    display: none;
+}
+
 #hero-img__container aside {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
     position: absolute;
     left: .5rem;
     bottom: 4rem;
     margin: 1rem;
-    /* background-color: #fff; */
 }
 
 #hero-img__container p {
@@ -305,15 +314,15 @@ nav {
 
 .action-button {
     display: block !important;
+    border: solid .25rem #fff;
+    border-radius: 3rem;
+    padding: .85rem 1.75rem !important;
+    font-size: 2rem;
+    background-color: #5f2414;
 }
 
 #hero-img__container aside button {
     display: none;
-    border: solid .25rem #fff;
-    border-radius: 3rem;
-    padding: .85rem 1.75rem;
-    font-size: 2rem;
-    background-color: #5f2414;
 }
 
 #hero-img__container aside button a {
@@ -375,8 +384,14 @@ nav {
 #monthly-feature__container {
     margin: auto;
     padding: 1.5rem 1rem;
-    /* background-color: var(--hot-pink); */
+    width: fit-content;
+    /* background: no-repeat center url('images/checkered-bg.jpg');
+    border: solid .1rem #000;
+    border-radius: 2rem;
+    margin: 2rem;
+    width: 100%; */
 }
+
 
 #best-sellers__container {
     position: relative;
@@ -413,7 +428,9 @@ nav {
     display: inline-flex;
     flex-direction: column;
     min-width: 20rem;
+    width: 20rem;
     height: auto;
+    justify-content: space-between;
     margin: 1rem auto;
     padding: 1rem;
     border: solid .1rem #000;
@@ -435,8 +452,14 @@ nav {
     position: relative;
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    /* row-gap: 1rem; */
     text-align: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.product-info__container * {
+    margin: .5rem;
 }
 
 .product-name {
@@ -446,20 +469,17 @@ nav {
 
 .product-price {
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 .product-description {
     font-family: "Inter", sans-serif;
-    font-size: .85rem;
+    font-size: .9rem;
 }
 
 .add-to-cart__button {
-    position: absolute;
-    display: inline-block;
-    bottom: 1rem;
-    left: 50%;
-    padding: .5rem 1rem;
+    margin: 1rem 0;
+    padding: .85rem 4rem;
     color: #fff;
 }
 
@@ -574,5 +594,141 @@ nav {
 @media screen and (min-width: 768px) {
     #mobile-nav {
         width: 50vw;
+    }
+
+    #hero-img__container aside {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        left: 3rem;
+        bottom: 2rem;
+        margin: 0;
+        padding: 1.5rem;
+        border-radius: 2rem;
+        background-color: #fff;
+        width: 65%;
+    }
+
+    #hero-img__container aside div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    #hero-img__container aside p {
+        display: block;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .action-button {
+        display: block !important;
+        border: none;
+    }
+
+    #hero-img__container aside button {
+        display: block;
+        width: 16rem;
+        padding: .25rem 0;
+    }
+
+    #hero-img__container aside button a {
+        color: #fff;
+    }
+
+    #contact-form__submit {
+        justify-content: space-between;
+        max-width: 20rem;
+        margin: 1.5rem 0 auto auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #contact-container {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--gold);
+    }
+
+    #contact-us__form {
+        min-width: 65vw;
+    }
+
+    #contact-info__container {
+        padding-top: 2rem;
+        justify-content: space-between;
+    }
+
+    #mobile-nav__open {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-a {
+        margin: 1rem 2rem 0.5rem 2rem;
+    }
+
+    #widescreen-nav {
+        display: flex;
+        margin: 1rem 2rem;
+        column-gap: 2rem;
+    }
+
+    #widescreen-nav li {
+        list-style: none;
+        width: 6rem;
+        text-align: center;
+        font-family: "Mouse Memoirs", sans-serif;
+        font-size: 1.25rem;
+    }
+
+    #widescreen-nav li a {
+        display: block;
+    }
+
+    #hero-img__container aside {
+        width: auto;
+    }
+
+    #hero-img__container aside p {
+        font-size: 1.25rem;
+    }
+
+    #hero-img__container>div {
+        width: 100%;
+        height: 100%;
+    }
+
+    #hero-img768__featured {
+        display: none;
+    }
+
+    #hero-img1366__featured {
+        display: block;
+        height: 75vh;
+        object-fit: cover;
+    }
+}
+
+@media screen and (min-width: 1336px) {
+    #hero-img__container aside {
+        left: 6rem;
+        bottom: 1rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    main {
+        margin: auto;
+        width: 1440px;
     }
 }
