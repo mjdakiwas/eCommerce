@@ -304,8 +304,23 @@ nav {
     margin: 1rem;
 }
 
+#hero-img__container aside div {
+    width: min-content;
+}
+
 #hero-img__container p {
     display: none;
+}
+
+#hero-img__container aside a {
+    display: none;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--navy);
+    font-family: "Mouse Memoirs", sans-serif;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .action-button {
@@ -314,12 +329,11 @@ nav {
     border-radius: 3rem;
     padding: .85rem 1.75rem !important;
     font-size: 2rem;
-    background-color: #5f2414;
+    background-color: #5f2414 !important;
 }
 
-#hero-img__container aside button {
-    display: none;
-    color: #fff;
+.action-button:hover {
+    cursor: pointer;
 }
 
 #hero-img__float {
@@ -614,14 +628,10 @@ nav {
         border: none;
     }
 
-    #hero-img__container aside button {
+    #hero-img__container aside a {
         display: block;
         width: 16rem;
         padding: .25rem 0;
-    }
-
-    #hero-img__container aside button a {
-        color: #fff;
     }
 
     #contact-form__submit {
