@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Mouse+Memoirs&family=Inter:opsz@14..32&family=Purple+Purse&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="" class="logo-a"><img src="images/top-o-cherry-logo.png" class="logo"></a>
+        <nav>
+            <!-- <ul id="widescreen-nav">
+                <li><a href="">Home</a></li>
+                <li><a href="pages/products.html">Shop</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul> -->
+            <button id="mobile-nav__open" class="button-w-icon"><i class="material-symbols-rounded">
+                    menu
+                </i></button>
+            <ul id="mobile-nav">
+                <button id="mobile-nav__close" class="button-w-icon"><i class="material-symbols-rounded">
+                        close
+                    </i></button>
+                <li><a href="">Home</a></li>
+                <li><a href="pages/products.html">Shop</a></li>
+                <li><a href="pages/contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero-img__container">
+            <!-- <button class="slide-left button-w-icon"><i class="material-symbols-rounded">
+                    expand_circle_right
+                </i></button>
+            <button class="slide-right button-w-icon">
+                <i class="material-symbols-rounded">
+                    expand_circle_right
+                </i> -->
+            </button>
+            <section id="hero-img__1" class="carousel-slide">
+                <img src="images/pineapple-twist-up__hero768px.png" id="hero-img__featured" alt="">
+                <aside>
+                    <p>Getting chilly? Cozy up with Pineapple Twist-Up!</p>
+                    <button class="action-button"><a href="pages/products-pages/pineapple.html">Twist It
+                            Up!</a></button>
+                    <button><a href="pages/products.html">Shop All</a></button>
+                </aside>
+            </section>
+            <!-- <section id="hero-img__2" class="carousel-slide">
+                    <img src="images/dynamic-ice-cream-strawberry.png" id="hero-img" alt="">
+                <aside>
+                    <p>Getting chilly? Cozy up with Pineapple Twist-Up!</p>
+                    <button><a href="pages/products-pages/pineapple.html">Twist It Up!</a></button>
+                    <button><a href="pages/products.html">Shop All</a></button>
+                </aside>
+            </section> -->
+            <!-- <div class="indicators-container">
+                <div class="indicator active-indicator"></div>
+                <div class="indicator"></div>
+            </div> -->
+        </section>
+
+        <section id="slogan-container">
+            <h1>Cool classics, wild swirls — life's sweetest with a cherry on top.</h1>
+        </section>
+
+        <section id="monthly-feature__container">
+            <h2>Ice-cream of the Month</h2>
+            <!-- <p>Want to try something else?</p>
+            <button>Shop Now</button> -->
+        </section>
+
+        <section id="best-sellers__container">
+            <h2>Best Sellers</h2>
+            <button class="slide-left button-w-icon"><i class="material-symbols-rounded">
+                    expand_circle_right
+                </i></button>
+            <button class="slide-right button-w-icon">
+                <i class="material-symbols-rounded">
+                    expand_circle_right
+                </i></button>
+            <div id="best-sellers"></div>
+            <!-- <div class="indicators-container">
+                <div class="indicator active-indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div> -->
+        </section>
+    </main>
+    <footer>
+        <div id="newsletter-container">
+            <h2>Hot Off the Scoop Press</h2>
+            <p>Join the scoop squad! Fresh flavors, fun updates, and a cherry on top, delivered to you.</p>
+            <div id="newsletter-input__container">
+                <input type="email" id="newsletter-input" name="newsletter-input" placeholder="Email Address">
+                <button type="submit" id="newsletter-submit__btn"><i class="material-symbols-rounded">
+                        line_end_arrow_notch
+                    </i></button>
+            </div>
+        </div>
+        <div>
+            <ul id="social-media__container">
+                <li><a><img src="https://s.magecdn.com/social/mw-facebook.svg"></a></li>
+                <li><a><img src="https://s.magecdn.com/social/mw-instagram.svg"></a></li>
+                <li><a><img src="https://s.magecdn.com/social/mw-x.svg"></a></li>
+                <li><a><img src="https://s.magecdn.com/social/mw-youtube.svg"></a></li>
+            </ul>
+            <a href=""><img src="images/top-o-cherry-logo.png" class="logo"></a>
+            <ul id="company-docs__container">
+                <li><a href="pages/contact.html">Contact Us</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">Privacy Notice</a></li>
+                <li><a href="">Accessibility</a></li>
+            </ul>
+            <p id="copyright">Top O' Cherry @ 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&family=Mouse+Memoirs&family=Inter:opsz@14..32&family=Purple+Purse&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo-a"><img src="../images/top-o-cherry-logo.png" class="logo"></a>
+        <nav>
+            <!-- <ul id="widescreen-nav">
+                <li><a href="">Home</a></li>
+                <li><a href="pages/products.html">Shop</a></li>
+                <li><a href="pages/contact.html">Contact</a></li>
+            </ul> -->
+            <button id="mobile-nav__open" class="button-w-icon"><i class="material-symbols-rounded">
+                    menu
+                </i></button>
+            <ul id="mobile-nav">
+                <button id="mobile-nav__close" class="button-w-icon"><i class="material-symbols-rounded">
+                        close
+                    </i></button>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="img-hero__contact-container">
+                <img src="../images/contacts-pg__heroimg.jpg" id="img-hero__contact"
+                    alt="A group of friends laughing as they enjoy eating ice cream.">
+            </div>
+            <h1>We'd love to hear from you!</h1>
+        </section>
+
+        <form id="contact-us__form">
+            <h2>Contact Us</h2>
+            <div id="fname-input__container">
+                <label for="fname">First Name</label>
+                <input type="text" name="fname" id="fname">
+                <p id="invalid-fname__msg" class="invalid-input__msg"></p>
+            </div>
+
+            <div id="lname-input__container">
+                <label for="name">Last Name</label>
+                <input type="text" name="lname" id="lname">
+                <p id="invalid-lname__msg" class="invalid-input__msg"></p>
+            </div>
+
+            <div id="email-input__container">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+                <p id="invalid-email__msg" class="invalid-input__msg"></p>
+            </div>
+
+            <div id="phone-input__container">
+                <label for="phone-number">Phone Number</label>
+                <input type="text" name="phone-number" id="phone-number">
+                <p id="invalid-phonenum__msg" class="invalid-input__msg"></p>
+            </div>
+
+            <div id="message-input__container">
+                <label for="message">Message</label>
+                <input type="text" name="message" id="message">
+                <p id="invalid-msg__msg" class="invalid-input__msg"></p>
+            </div>
+
+            <button type="submit" id="contact-form__submit">Send Message
+                <i class="material-symbols-rounded">
+                    arrow_right_alt
+                </i></button>
+
+            <!-- <section id="message-sent">
+                <p>Your message is sent!</p>
+                <button id="message-return__button">Return</button>
+            </section> -->
+        </form>
+
+        <section id="contact-info__container">
+            <h2>Reach Out Directly</h2>
+            <div>
+                <h3>Email Support</h3>
+                <p>help@topocherry.com</p>
+            </div>
+
+            <div>
+                <h3>Visit Our Office</h3>
+                <p>123 Engineer Rd</p>
+                <p>Hire, NC</p>
+            </div>
+
+            <div>
+                <h3>Call Us</h3>
+                <p>(+1) 234-567-8910</p>
+            </div>
+
+            <div>
+                <h3>Operation Hours</h3>
+                <p>Mon - Fri</p>
+                <p>9:00 am - 5:00 pm EST</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="newsletter-container">
+            <h2>Hot Off the Scoop Press</h2>
+            <p>Join the scoop squad! Fresh flavors, fun updates, and a cherry on top, delivered to you.</p>
+            <div id="newsletter-input__container">
+                <input type="email" id="newsletter-input" name="newsletter-input" placeholder="Email Address">
+                <button type="submit" id="newsletter-submit__btn"><i class="material-symbols-rounded">
+                        line_end_arrow_notch
+                    </i></button>
+            </div>
+        </div>
+        <div>
+            <ul id="social-media__container">
+                <li><a><img src="https://s.magecdn.com/social/mw-facebook.svg"></a></li>
+                <li><a><img src="https://s.magecdn.com/social/mw-instagram.svg"></a></li>
+                <li><a><img src="https://s.magecdn.com/social/mw-x.svg"></a></li>
+                <li><a><img src="https://s.magecdn.com/social/mw-youtube.svg"></a></li>
+            </ul>
+            <a href=""><img src="../images/top-o-cherry-logo.png" class="logo"></a>
+            <ul id="company-docs__container">
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">Privacy Notice</a></li>
+                <li><a href="">Accessibility</a></li>
+            </ul>
+            <p id="copyright">Top O' Cherry @ 2025 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

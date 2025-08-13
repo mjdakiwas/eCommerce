@@ -1,0 +1,100 @@
+{
+    "products": [
+        {
+            "name": "Vinyl Crunch",
+            "flavor": "Vanilla",
+            "price": "6",
+            "description": "Vanilla malt ice cream loaded with chocolate-covered pretzel bits and toffee pieces — the perfect mix of sweet and salty hits.",
+            "rating": "4.2",
+            "image": "../images/product-images/vinyl-crunch.webp"
+        },
+        {
+            "name": "Swingtime Sundae",
+            "flavor": "Strawberry",
+            "price": "6",
+            "description": "Strawberry cheesecake ice cream with graham cracker crumble and whipped cream ribbons — the perfect dessert date.",
+            "rating": "4.9",
+            "image": "../images/product-images/swingtime-sundae.webp"
+        },
+        {
+            "name": "Cherry Bombshell",
+            "flavor": "Cherry",
+            "price": "6",
+            "description": "Cherry ice cream swirled with cherry cola syrup and chunks of dark chocolate — bold, bubbly, and impossible to ignore.",
+            "rating": "4.9",
+            "image": "../images/product-images/cherry-bombshell.webp"
+        },
+        {
+            "name": "Banana Bopper",
+            "flavor": "Banana",
+            "price": "6",
+            "description": "Banana ice cream with caramel fudge ribbons and crushed peanut brittle — a split second away from being your favorite.",
+            "rating": "4.4",
+            "image": "../images/product-images/banana-bopper.webp"
+        },
+        {
+            "name": "T-Bird Toffee",
+            "flavor": "Coffee",
+            "price": "6",
+            "description": "Coffee toffee ice cream with chocolate-covered almonds and ribbons of mocha fudge — cool, fast, and dangerously smooth.",
+            "rating": "4.0",
+            "image": "../images/product-images/t-bird-toffee.webp"
+        },
+        {
+            "name": "Car Hop Crunch",
+            "flavor": "Butterscotch",
+            "price": "6",
+            "description": "Butterscotch ice cream with praline pecans and shards of caramel candy — the ultimate “drive-in” delight.",
+            "rating": "4.9",
+            "image": "../images/product-images/car-hop-crunch.webp"
+        },
+        {
+            "name": "Zoot Suit Zest",
+            "flavor": "Lemon Custard",
+            "price": "6",
+            "description": "Lemon custard ice cream with candied ginger bits and a swirl of lemon curd — bright, zippy, and dressed to impress.",
+            "rating": "4.8",
+            "image": "../images/product-images/zoot-suit-zest.webp"
+        },
+        {
+            "name": "Malt Shop Magic",
+            "flavor": "Chocolate",
+            "price": "6",
+            "description": "Chocolate malt ice cream swirled with peanut butter fudge and malted milk ball crunch — a throwback to after-school hangouts.",
+            "rating": "4.2",
+            "image": "../images/product-images/malt-shop-magic.jpg"
+        },
+        {
+            "name": "Maple Jitterbug",
+            "flavor": "Maple",
+            "price": "6",
+            "description": "Maple ice cream with cinnamon-sugar swirl and walnut toffee — a nutty, warm hug with a pep in its step.",
+            "rating": "4.3",
+            "image": "../images/product-images/maple-jitterbug.webp"
+        },
+        {
+            "name": "Jukebox Jive",
+            "flavor": "Black Raspberry",
+            "price": "6",
+            "description": "Black raspberry ice cream with cheesecake chunks and swirls of vanilla fudge — every bite hits a sweet note.",
+            "rating": "4.6",
+            "image": "../images/product-images/jukebox-jive.webp"
+        },
+        {
+            "name": "Flip-Top Float",
+            "flavor": "Root Beer",
+            "price": "6",
+            "description": "Root beer ice cream with cola ribbons and whipped cream pockets — soda shop magic in frozen form.",
+            "rating": "4.4",
+            "image": "../images/product-images/flip-top-float.webp"
+        },
+        {
+            "name": "Pineapple Twist-Up",
+            "flavor": "Pineapple Cake",
+            "price": "6",
+            "description": "Pineapple cake ice cream with brown sugar caramel swirl and buttery cake bits — a dessert that flips your day upside down.",
+            "rating": "4.5",
+            "image": "../images/product-images/pineapple-twist-up.webp"
+        }
+    ]
+}
