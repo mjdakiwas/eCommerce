@@ -709,6 +709,10 @@ nav {
         height: 75vh;
         object-fit: cover;
     }
+
+    #newsletter-container {
+        padding: 1.75rem 15rem;
+    }
 }
 
 @media screen and (min-width: 1336px) {
