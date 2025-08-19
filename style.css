@@ -321,6 +321,7 @@ nav {
     font-family: "Mouse Memoirs", sans-serif;
     font-size: 2rem;
     text-align: center;
+    min-width: 12rem;
 }
 
 .action-button {
@@ -503,6 +504,12 @@ nav {
 
 
 /* contact page css */
+#contact-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gold);
+}
+
 #contact-us__form {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
@@ -535,6 +542,11 @@ nav {
     border: solid 1px var(--navy-dark);
     border-radius: 1.25rem;
     padding: 0 1.25rem;
+}
+
+#message {
+    width: 100%;
+    min-height: 8rem;
 }
 
 #contact-form__submit,
@@ -650,7 +662,6 @@ nav {
     #contact-container {
         display: flex;
         flex-direction: row;
-        background-color: var(--gold);
     }
 
     #contact-us__form {
