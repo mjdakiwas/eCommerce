@@ -49,36 +49,31 @@
 
         <div id="contact-container">
             <div id="contact-us__form">
-                <form id="form-container">
+                <form id="form-container" novalidate>
                     <h2>Contact Us</h2>
                     <div id="fname-input__container">
                         <label for="fname">First Name</label>
-                        <input type="text" name="fname" id="fname">
-                        <p id="invalid-fname__msg" class="invalid-input__msg"></p>
+                        <input type="text" name="fname" id="fname" data-name="First name">
                     </div>
 
                     <div id="lname-input__container">
                         <label for="lname">Last Name</label>
-                        <input type="text" name="lname" id="lname">
-                        <p id="invalid-lname__msg" class="invalid-input__msg"></p>
+                        <input type="text" name="lname" id="lname" data-name="Last name">
                     </div>
 
                     <div id="email-input__container">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
-                        <p id="invalid-email__msg" class="invalid-input__msg"></p>
+                        <input type="email" name="email" id="email" data-name="Email">
                     </div>
 
                     <div id="phone-input__container">
                         <label for="phone-number">Phone Number</label>
-                        <input type="text" name="phone-number" id="phone-number">
-                        <p id="invalid-phonenum__msg" class="invalid-input__msg"></p>
+                        <input type="text" name="phone-number" id="phone-number" data-name="Phone number">
                     </div>
 
                     <div id="message-input__container">
                         <label for="message">Message</label>
-                        <input type="textarea" name="message" id="message">
-                        <p id="invalid-msg__msg" class="invalid-input__msg"></p>
+                        <input type="textarea" name="message" id="message" data-name="Message">
                     </div>
 
                     <button type="submit" id="contact-form__submit">Send Message
