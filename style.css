@@ -304,10 +304,6 @@ nav {
     margin: 1rem;
 }
 
-#hero-img__container aside div {
-    width: min-content;
-}
-
 #hero-img__container p {
     display: none;
 }
@@ -627,6 +623,7 @@ nav {
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
+        width: min-content;
     }
 
     #hero-img__container aside p {
