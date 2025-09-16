@@ -82,6 +82,7 @@
     // ui js
     // you should be able to achieve this menu btn functionality with one click event rather
     // than two separate events. Could add the single click event to navModal and toggle the styles from there
+    // Many ways to do it and examples online, but here is one: https://codepen.io/jaflo/pen/DpeYZy
     const openMenuBtn = document.getElementById('mobile-nav__open');
     const closeMenuBtn = document.getElementById('mobile-nav__close');
     const navModal = document.getElementById('mobile-nav');
@@ -188,7 +189,7 @@
         })
 
         // Another example of being able to refactor when you start writing the same function multiple times
-        // Could loop through the inputs like you do on line 163 and add the event listener to each one, only having to write it out once
+        // Could loop through the inputs like you do on line 164 and add the event listener to each one, only having to write it out once
         fnameInput.addEventListener('input', (event) => {
             valid(event.target); // event.target gets 'fnameInput'
         })
