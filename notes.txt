@@ -1,0 +1,3 @@
+Few notes from viewing the site link:
+- Making the cursor: pointer for any clickable elements. You have it for the nav links, but not for the buttons
+- The best sellers section is not scrolling when clicking the arrows. Might be a new feature that's not done yet?
