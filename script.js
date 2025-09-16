@@ -1,6 +1,4 @@
 (async () => {
-    let fetchedData;
-
     // fetching json using asyn/await
     const fetchData = async () => {
         try {
@@ -8,13 +6,20 @@
             if (!response.ok) {
                 throw new Error(`HTTP error--Status: ${response.status}`);
             }
-            fetchedData = await response.json(); // assigning parsed JSON to global variable
-            return fetchedData;
+            return await response.json(); // assigning parsed JSON to global variable
         } catch (error) {
             console.error('Error fetching JSON:', error);
+            return;
         }
     }
-    await fetchData();
+    // Small change to save you from assigning the 
+    const fetchedData = await fetchData();
+    // This is called a guard clause
+    // If the fetchedData is null, it will return early and not execute the rest of the code
+    // This is a common pattern in JavaScript to handle error cases
+    // Usually, you would show an error message or redirect to a error page or something in this scenario
+    if (!fetchedData) return;
+
     const productsArray = fetchedData.products; // accessing products array inside the json file
 
     // this function will allow me to have more control on how many product elements I want to create
@@ -62,6 +67,7 @@
         populateProducts(bestSellersProducts, bestSellersContainer);
     }
 
+    // Agreed with your comment below. A lot of the JS can be cleaned up by separating it into different files
     // to refactor/further optimize code, will create separate js files for each html file requiring it
     if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
         monthlyFeatureDisplay(['Pineapple Twist-Up']);
@@ -74,6 +80,8 @@
     }
 
     // ui js
+    // you should be able to achieve this menu btn functionality with one click event rather
+    // than two separate events. Could add the single click event to navModal and toggle the styles from there
     const openMenuBtn = document.getElementById('mobile-nav__open');
     const closeMenuBtn = document.getElementById('mobile-nav__close');
     const navModal = document.getElementById('mobile-nav');
@@ -86,6 +94,7 @@
         document.body.classList.add('no-scroll');
     })
 
+    // When you start writing the same function twice, it's a sign that you could refactor your code
     closeMenuBtn.addEventListener('click', () => {
         navModal.style.display = getComputedStyle(navModal).display === 'flex' ? 'none' : 'flex';
         openMenuBtn.style.display = 'block';
@@ -94,6 +103,7 @@
     })
 
     // form validation
+    // Could move to a contact.js file and only import/use it on that page
     if (window.location.pathname === '/pages/contact.html') {
         const contactForm = document.getElementById('form-container');
         const fnameInput = document.getElementById('fname');
@@ -110,6 +120,10 @@
         let isValid = true;
 
         const invalid = (input) => {
+            // You could have the html error messages in the html file, then show/hide them based on a class you add/remove
+            // Then in this function all you would do would be to toggle a ".hasError" class on the input
+            // Then in CSS you could have a line like ".container.hasError .invalid-input__msg { display: block; border: 1px solid red; }"
+            // After that line you would have ".invalid-input__msg { display: none; }" so that the error message is hidden initially or when the input is valid
             function message() {
                 if (input.value === '') {
                     const inputDataName = input.getAttribute('data-name');
@@ -148,7 +162,10 @@
             const inputs = document.querySelectorAll('input');
             inputs.forEach((input) => {
                 const invalidMsg = document.getElementById(`invalid-${input.name}__msg`);
+                // Does this only allow one error message to be displayed at a time?
                 if (!document.contains(invalidMsg)) {
+                    // Could move the email and phone number checks outside of this loop since they have nothing to do with the input value
+                    // and doesn't need to run every time this loops
                     !input.value || !emailRegex.test(emailInput.value) || !phoneNumRegex.test(phoneNumInput.value) ? invalid(input) : valid(input);
                 }
             });
@@ -161,10 +178,17 @@
         })
 
         messageSentReturnBtn.addEventListener('click', () => {
+            // A cleaner way to do this would be to use a class to alter the display
+            // You could use a class on the <div> that contains the form and message sent sections
+            // In HTML you'd have a class like .formSubmitted
+            // Then in CSS you'd have a line like ".formSubmitted .messageSent {display: flex;}"
+            // and ".formNotSubmitted .messageSent {display: none;}"
             messageSent.style.display = 'none';
             contactForm.style.display = 'flex';
         })
 
+        // Another example of being able to refactor when you start writing the same function multiple times
+        // Could loop through the inputs like you do on line 163 and add the event listener to each one, only having to write it out once
         fnameInput.addEventListener('input', (event) => {
             valid(event.target); // event.target gets 'fnameInput'
         })

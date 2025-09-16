@@ -55,6 +55,8 @@
 
 body {
     /* default body style */
+    /* You could also had a default font family here (or on any container) so that you don't have to specify it for every element */
+    /* Currently specifying Inter 10 times */
     display: flex;
     flex-direction: column;
     background-color: var(--light-cream);
