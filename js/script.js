@@ -1,3 +1,20 @@
+/* TASKS
+HOMEPAGE
+[] Add slides for hero images
+[] Change product cards for variation
+[] Add indicators for 'Best Sellers'
+  [] Add next/prev buttons functionality
+
+PRODUCTS
+Nice-to-Haves
+[] Add more products in the JSON
+  [] Implement pagenation
+
+CONTACT
+[] Form validation/data sanitation
+  [] Validate min and max values for inputs
+*/
+
 // fetching json using asyn/await
 const fetchData = async () => {
   try {
@@ -36,9 +53,7 @@ function createProductElement(product) {
 // productContainerParent is the "purpose" of the overarching parent element displaying the product (i.e. monthly feature, best sellers, all products)
 // it should be the id of the parent element
 // function used to populate all the products inside the json file (for the products page)
-async function populateProducts(productContainerParent) {
-  const data = await fetchData();
-  const products = data.products;
+async function populateProducts(products, productContainerParent) {
   for (const product of products) {
     const productContainer = createProductElement(product);
     productContainerParent.innerHTML += productContainer;
@@ -48,6 +63,7 @@ async function populateProducts(productContainerParent) {
 // https://www.geeksforgeeks.org/javascript/how-to-get-a-value-from-a-json-array-in-javascript/ => different methods to get values from a json array
 async function monthlyFeatureDisplay(productNames) {
   const data = await fetchData();
+  if (!data) return; // gaurd clause
   const products = data.products;
   const monthlyFeatureContainer = document.getElementById(
     "monthly-feature__container"
@@ -55,12 +71,14 @@ async function monthlyFeatureDisplay(productNames) {
   const monthlyFeatureProducts = products.filter((product) =>
     productNames.includes(product.name)
   );
+  console.log(monthlyFeatureProducts);
   populateProducts(monthlyFeatureProducts, monthlyFeatureContainer);
 }
 
 // productNamesArray is an array of products that will pass as the best sellers
 async function bestSellersDisplay(productNames) {
   const data = await fetchData();
+  if (!data) return;
   const products = data.products;
   const bestSellersContainer = document.getElementById("best-sellers");
   const bestSellersProducts = products.filter((product) =>
@@ -70,23 +88,23 @@ async function bestSellersDisplay(productNames) {
 }
 
 // ui js
-const openMenuBtn = document.getElementById("mobile-nav__open");
-const closeMenuBtn = document.getElementById("mobile-nav__close");
-const navModal = document.getElementById("mobile-nav");
+const navbar = document.querySelector("nav");
+const openMenuBtn = document.querySelector(".mobile-nav__openBtn");
+const closeMenuBtn = document.querySelector(".mobile-nav__closeBtn");
+const navModal = document.querySelector(".mobile-nav");
 
-// to refactor/further optimize code, will make .hidden class to alter display
-openMenuBtn.addEventListener("click", () => {
-  navModal.style.display =
-    getComputedStyle(navModal).display === "none" ? "flex" : "none";
-  openMenuBtn.style.display = "none";
-  closeMenuBtn.style.display = "block";
-  document.body.classList.add("no-scroll");
-});
+navbar.addEventListener("click", (e) => {
+  const clickedBtn = e.target.closest("button");
 
-closeMenuBtn.addEventListener("click", () => {
-  navModal.style.display =
-    getComputedStyle(navModal).display === "flex" ? "none" : "flex";
-  openMenuBtn.style.display = "block";
-  closeMenuBtn.style.display = "none";
-  document.body.classList.remove("no-scroll");
+  if (clickedBtn === openMenuBtn) {
+    navbar.classList.add("nav__modal--opened");
+    navModal.classList.add("open");
+    document.body.classList.add("no-scroll");
+  }
+
+  if (clickedBtn === closeMenuBtn) {
+    navbar.classList.remove("nav__modal--opened");
+    navModal.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  }
 });
